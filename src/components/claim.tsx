@@ -10,41 +10,46 @@ interface Props {
 }
 
 const TOKEN_ADDRESS: string = "0x4FBaDBC05C4680e7756165D73194Ae373E18e15f"
+const abi = require("../assets/json/vesting-abi.json").abi
 
 export function Claim({ provider, address }: Props) {
 	const [vesting, setVesting] = useState<any>(null)
+	const [end, setEnd] = useState<string>("")
 
 	const handleGetVesting = async () => {
 		try {
 			await provider.send("eth_requestAccounts", [])
 
 			const signer = provider.getSigner()
-
-			// Initilise the contract
-			const vesting = new Contract(
-				address,
-				require("../assets/json/vesting-abi.json").abi,
-				signer
-			)
+			const contract =
+				require("../assets/json/vesting-contracts.json").find(
+					({ wallet }) =>
+						wallet.toLowerCase() === address.toLowerCase()
+				)
+			const vesting = new Contract(contract.contractAddress, abi, signer)
 
 			const vestingBeneficiary = await vesting.beneficiary()
+			console.log("vestingBeneficiary", vestingBeneficiary)
 			const vestingStart = await vesting.start()
 			const vestingDuration = await vesting.duration()
 			const vestingEnd = vestingStart.add(vestingDuration)
-			const vestingTotalVestingAmount = await vesting[
-				"vestedAmount(address,uint64)"
-			](address, vestingEnd)
-			const vestingReleasable = await vesting["releasable(address)"](
-				address
+			setEnd(
+				new Date(vestingEnd.toNumber() * 1000).toLocaleString("en-US", {
+					day: "numeric",
+					month: "long",
+					year: "numeric",
+				})
 			)
-			const vestingReleased = await vesting["released(address)"](address)
-
-			console.log(
-				vestingEnd,
-				vestingTotalVestingAmount,
-				vestingReleasable,
-				vestingReleased
-			)
+			// const vestingTotalVestingAmount = await vesting[
+			// 	"vestedAmount(address,uint64)"
+			// ](TOKEN_ADDRESS, vestingEnd)
+			// const vestingReleasable = await vesting["releasable(address)"](
+			// 	TOKEN_ADDRESS
+			// )
+			// const vestingReleased = await vesting["released(address)"](
+			// 	TOKEN_ADDRESS
+			// )
+			setVesting(vesting)
 		} catch (error) {
 			console.error(error)
 		}
@@ -73,7 +78,7 @@ export function Claim({ provider, address }: Props) {
 						color="#B5AEB8"
 						className="mr-1"
 					/>
-					Sep 2, 2024
+					{end}
 				</p>
 				<div className="w-full  h-4 bg-info-light rounded-full relative">
 					<div className="h-full w-full overflow-hidden">
