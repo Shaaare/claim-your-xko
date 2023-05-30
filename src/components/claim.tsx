@@ -1,8 +1,23 @@
 import { TokenRow } from "@/app/atoms"
 import { faClock, faWallet } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Contract, ethers } from "ethers"
-import { useState } from "react"
+import { BigNumber, Contract, ethers } from "ethers"
+import { useCallback, useEffect, useMemo, useState } from "react"
+
+type VestingContract = {
+	wallet: string
+	amount: number
+	start: number
+	duration: number
+	contractAddress: string
+}
+
+type VestingContractData = {
+	total: BigNumber
+	claimed: BigNumber
+	locked: BigNumber
+	releasable: BigNumber
+}
 
 interface Props {
 	provider: ethers.providers.Web3Provider
@@ -10,45 +25,43 @@ interface Props {
 }
 
 const TOKEN_ADDRESS: string = "0x4FBaDBC05C4680e7756165D73194Ae373E18e15f"
+const contracts: VestingContract[] = require("../assets/json/vesting-contracts.json")
 const abi = require("../assets/json/vesting-abi.json").abi
 
 export function Claim({ provider, address }: Props) {
 	const [vesting, setVesting] = useState<any>(null)
-	const [end, setEnd] = useState<string>("")
+	const [end, setEnd] = useState<number>(0)
+	const [amounts, setAmounts] = useState<>({
+		total: BigNumber.from(0),
+		claimed: BigNumber.from(0),
+		locked: BigNumber.from(0),
+		releasable: BigNumber.from(0),
+	})
+	const formattedEnd = useMemo(() => {
+		return new Date(end * 1000).toLocaleString("en-US", {
+			day: "numeric",
+			month: "long",
+			year: "numeric",
+		})
+	}, [end])
 
 	const handleGetVesting = async () => {
 		try {
 			await provider.send("eth_requestAccounts", [])
 
 			const signer = provider.getSigner()
-			const contract =
-				require("../assets/json/vesting-contracts.json").find(
-					({ wallet }) =>
-						wallet.toLowerCase() === address.toLowerCase()
-				)
+			const contract = contracts.find(
+				({ wallet }) => wallet.toLowerCase() === address.toLowerCase()
+			)
+
+			if (!contract) throw new Error("No contract found for this address")
+
 			const vesting = new Contract(contract.contractAddress, abi, signer)
 
-			const vestingBeneficiary = await vesting.beneficiary()
-			console.log("vestingBeneficiary", vestingBeneficiary)
 			const vestingStart = await vesting.start()
 			const vestingDuration = await vesting.duration()
 			const vestingEnd = vestingStart.add(vestingDuration)
-			setEnd(
-				new Date(vestingEnd.toNumber() * 1000).toLocaleString("en-US", {
-					day: "numeric",
-					month: "long",
-					year: "numeric",
-				})
-			)
-			// const vestingTotalVestingAmount = await vesting[
-			// 	"vestedAmount(address,uint64)"
-			// ](TOKEN_ADDRESS, vestingEnd)
-			// const vestingReleasable = await vesting["releasable(address)"](
-			// 	TOKEN_ADDRESS
-			// )
-			// const vestingReleased = await vesting["released(address)"](
-			// 	TOKEN_ADDRESS
-			// )
+			setEnd(vestingEnd.toNumber())
 			setVesting(vesting)
 		} catch (error) {
 			console.error(error)
@@ -58,6 +71,30 @@ export function Claim({ provider, address }: Props) {
 	if (!vesting) {
 		handleGetVesting()
 	}
+
+	const handleGetVestingData = useCallback(async () => {
+		try {
+			const [vestedAmount, releasable, released] = await Promise.all([
+				vesting["vestedAmount(address,uint64)"](TOKEN_ADDRESS, end),
+				vesting["releasable(address)"](TOKEN_ADDRESS),
+				vesting["released(address)"](TOKEN_ADDRESS),
+			])
+			setAmounts({
+				total: vestedAmount,
+				claimed: released,
+				locked: vestedAmount.sub(released),
+				releasable,
+			})
+		} catch (error) {
+			console.error(error)
+		}
+	}, [vesting, end])
+
+	useEffect(() => {
+		if (vesting) {
+			handleGetVestingData()
+		}
+	}, [vesting, handleGetVestingData])
 
 	return (
 		<>
@@ -78,7 +115,7 @@ export function Claim({ provider, address }: Props) {
 						color="#B5AEB8"
 						className="mr-1"
 					/>
-					{end}
+					{formattedEnd}
 				</p>
 				<div className="w-full  h-4 bg-info-light rounded-full relative">
 					<div className="h-full w-full overflow-hidden">
@@ -91,21 +128,25 @@ export function Claim({ provider, address }: Props) {
 					</div>
 				</div>
 				<div className="mt-12 shadow-lg shadow-danger/20 rounded-3xl md:p-8 p-4 lg:w-10/12 md:w-full w-full mx-auto">
-					<TokenRow first title="Total" amount="10 000 000" />
+					<TokenRow
+						first
+						title="Total"
+						amount={amounts.total.toNumber()}
+					/>
 					<TokenRow
 						title="Already claimed"
-						amount="1 000 000"
+						amount={amounts.claimed.toNumber()}
 						percent={10}
 					/>
 					<TokenRow
 						title="Locked"
 						hint="(71 days remaining)"
-						amount="7 000 000"
+						amount={amounts.locked.toNumber()}
 						percent={70}
 					/>
 					<TokenRow
 						title="🎉 You are now able to claim"
-						amount="2 000 000"
+						amount={amounts.releasable.toNumber()}
 						percent={10}
 					/>
 				</div>

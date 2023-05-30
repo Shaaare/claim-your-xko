@@ -2,7 +2,7 @@ interface Props {
 	first?: boolean
 	title: string
 	hint?: string
-	amount: string
+	amount: number
 	percent?: number
 }
 
