@@ -24,7 +24,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={inter.className}>
 				<main className="min-h-screen max-w-screen container bg-white mx-auto relative">
-					<button className="h-9 absolute top-3 right-3 bg-info/20 hover:bg-info/25 z-10 px-4 flex justify-center items-center rounded-full">
+					<button className="h-9 absolute md:top-10 top-3 right-3 bg-info/20 hover:bg-info/25 z-10 px-4 flex justify-center items-center rounded-full">
 						<FontAwesomeIcon
 							icon={faInfoCircle}
 							color={"#008BFF"}
