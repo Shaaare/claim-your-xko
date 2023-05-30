@@ -1,0 +1,821 @@
+[
+  {
+    "wallet": "0x4baf2c3F8e6a907DB58CaeA43ED3EBd8Baaec3A1",
+    "amount": 3000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0xc2C65D61fD01A483F22A71420176B764Fc82886e",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x4bBbEf39b54360fB7444caebf5F49ec354a7845c",
+    "amount": 1000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x65154b2c3CcA6A221F78041b10fb6aE4BC16d98f",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xAdCb0E962653ea101F6221c7e3DF976cd01a3B41",
+    "amount": 2000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x8fd407605A199B3741A70FC12F7286a7D5e943CE",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xb8f058f26a6dEC1642799E310c6A5fb4FF6abD17",
+    "amount": 2000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x04597AC29cb168c0B19fE0a93d715445525CdB71",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xbCB382aa89005BdbdC3eb9cCD4592AB6Fc9a08F6",
+    "amount": 2000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x33e355194fe5dFDBad34C8467055aAb903f3BB0d",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xDeE878b15a0D70E54c75173a943f52A04E0fbbB3",
+    "amount": 21000000,
+    "start": 1680213600,
+    "duration": 63072000,
+    "status": "token amount sent",
+    "contractAddress": "0xA458de1ea900e39Ccc8787aA51346a567fDB8663",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xE4776c3fC69DE7685e9A7E113DA528f8F83166B0",
+    "amount": 1000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x13B1146de29faa4Ee2F29576b1188d891ebA68c2",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xeec9d7e6AeDE35ff3FD2910a26065237DAfFD719",
+    "amount": 5000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x594bBC05976939705aDFd7E189094a9236A731b8",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x575890cEC4B3A698FF79B474Beb4cc2ea1D273E3",
+    "amount": 253000000,
+    "start": 1680213600,
+    "duration": 157680000,
+    "status": "token amount sent",
+    "contractAddress": "0x0d25F562d4E72Edf29e5dFe877c0ABb7e6af35Cf",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x418fEeEDF55957151273Ed0c3b21644081327882",
+    "amount": 10000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x71842088B605AF0B5B5413fE51f48976274cF972",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xEE026db86a98723e154BEdDA8B87D8d5b8a77184",
+    "amount": 15000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x6E9B2bb7742B648D7D864B82247670979f9E4fDC",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x3512ff2f9B624F0265f77BF06A7dc3b727c67F5B",
+    "amount": 1000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0xDeD30EFB8f44FDbBef3bA57a34900B5cA7F788a1",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xda07df655c0a86f55b9147ae981d4bb3b4368931",
+    "amount": 8000000,
+    "start": 1680213600,
+    "duration": 63072000,
+    "status": "token amount sent",
+    "contractAddress": "0x0e61ccb3F1eD643A6d10AB199c4e37BcF464f4b6",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x2CBB1D59Bd8A5C7E220d92fbE25877Eaa12A78b5",
+    "amount": 2000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x427C9141b19Cd6e2eF6498D649cf0cB02dF9314d",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x4f9E91D3FdAB31ec685C85E51da77AA0883976Da",
+    "amount": 3000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0xe443c09AfB8cB28060B93859B49779350FcE9E4b",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x3d6ceB3417880669625A19Fe12D2bd388629f189",
+    "amount": 1000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x4D6698E916Bc0af7928C263d4805214959CF29D0",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x128c76Ada97E3C6E39b2B2Ef84A84ed9c356cC51",
+    "amount": 510000000,
+    "start": 1680213600,
+    "duration": 157680000,
+    "status": "token amount sent",
+    "contractAddress": "0xF06c20b52624872729f268BBd321B1B05C0Bc65b",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xFc8A39CDf78247652A2942CD60C512D86b26902c",
+    "amount": 5000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0xdee17D0da62C0aA0A144F24ED1cef14192D72997",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x82e6077c579E6177EF0505A2b25A9E989028fe8c",
+    "amount": 2000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x645695300A78a9e276af750861c294eCe22d5ff2",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x6Db57a351Dc7f88A0c4cda90ec9125A8fB356cAD",
+    "amount": 1000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x03512e39faD6daE33d61181864964032a5d2c88e",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x7F0263B05e29089957b63DBc6a6d0ce8A202a598",
+    "amount": 251000000,
+    "start": 1680213600,
+    "duration": 157680000,
+    "status": "token amount sent",
+    "contractAddress": "0xc23094A97d6d251cD358e6b3A90e6C37afE613E9",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xFC5c11Ff0fA6BDC70c4e130B36221576c56d1562",
+    "amount": 30028382,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0xe6E1662D11C390311893313494F2e91208612d53",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x2467742571FF74fc6f48F38208cC578812Af1AA2",
+    "amount": 2840909,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x70208912303bC8a83CAeD25E1af827Fd86F9E9aA",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xf812a028e9098092a2d1f0df73104b20da33cf43",
+    "amount": 10000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0xd749A32666BECF5d5f23FcAAB92dE5C7feBb4bB2",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xF135bF38fA9D254577edE3b5Ac36068F98F5aA32",
+    "amount": 16000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0xDe891288867d85A2a42109B42799E4D3A8FaF8c5",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x3eC876B8162359fCFd54AE5A96b46Da02d51c490",
+    "amount": 2000780,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0xBDdB4a7448561040a3a7eC13ff6B5332CE4Dcc6E",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x80FFcdD429952cb1d665a3fDABae265c7513Cb1d",
+    "amount": 107983353,
+    "start": 1680213600,
+    "duration": 157680000,
+    "status": "token amount sent",
+    "contractAddress": "0x6ee8430F0Ec9CE0389860E3fED0D73d93a3c0a16",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x6e40b4C73b72D769016f110b5B77D1668ceeA458",
+    "amount": 4007220,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x5F48B190C076020408830d435aAd8D8b1C788A45",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xe18819Da53717b51FdD7C1a57519165088F842d0",
+    "amount": 48103555,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x1937b5Ed0BBe087bf671ac70384c1b9b9A937914",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xA7b7b2C0788aF8b457E4F42CB3d6B103786E04d2",
+    "amount": 5000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0xA1E097fbd147Ba60D7618C705B083DB7619fdb66",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xC9d800f2738da7F56D68531b582424e4B86EbC0e",
+    "amount": 77278658,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x538D6F4481D9602fd3555a04f5140d19906a3c10",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xC5CBC73A37EDA8EA1C58744276F2AFEAf686B64b",
+    "amount": 24000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x381C5c6FDe26A1EbD145d56B8EE44f773D89E4D8",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x85C0005879DC22967Fe841760f97f9505505e965",
+    "amount": 2000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x4B6558D863238bd2F460a78a89f2c85e1875D7de",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x06B427aa6e97ea3B11C13e7A059C4328ff1D7275",
+    "amount": 50000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x8D68667D51CbCdc36EEc4Ea1d9F571FeD357EE0b",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x44CDf7bB67E92CA7bF624F09190C7d48bF4Adc3E",
+    "amount": 10000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x070ca874aCD8Ac549a458D51C6d31f09F00509d2",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x76139d853c00d5D097EDd008280D34955Ab51615",
+    "amount": 1883239,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0xE93dFF7412Da417DEBbCcDF73541507958Caf313",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x5Fbe04e3F87fFF45b5311a90B03A67fD7b5f6aC5",
+    "amount": 8000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x63f686EaE5Eaa8171DbcF4c0fc44388BEf8467C8",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xa09358C6ca0476a3A5c3B539134F9527cC88C4E3",
+    "amount": 2000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x349507e4ABE796C08FF9EBABb787323c484AB13E",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xba0cB96597164E4519a7664cC2ebB9FcE1860AD7",
+    "amount": 20000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0xd31aaC6C5c7f6d65a28d686217C714CAC2e149b3",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xdE78Cc14F623313F2FDe1715D5f42996eA6bD151",
+    "amount": 2860000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0xf34DB18Ea078f578b365F995cF39C455bd19B041",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x319c35558052e3402eE2fC8C042A28387f0D0C57",
+    "amount": 28000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x98dB7eb9E0f5D107778535220343567CFB433CD0",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x6ce252053150Ad7354aa98ac65937d654056F697",
+    "amount": 20022472,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x90dA78B8F68c7170627903c9FdC63322A321251e",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x8513154755dDe8ec9b30834A666318469f1F2B3C",
+    "amount": 16000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0xd359aF143462ede0A6FCA9Ce82e19a5d7f75749F",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x481cB8b2F390997f8277757112C44126516f7E9F",
+    "amount": 2000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x22f7799191D76D0C9158994d2a44aef431D73002",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xF941B8fb312837FdeAD010AC7809625035953A3b",
+    "amount": 3737393,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0xcF955B50700b1C5D81a73d8A242E07090578cF01",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xb9CF6A22a785AC60544B5648371ce8b9E2855653",
+    "amount": 2000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x41A89B761cA46fBc51e159139b5F2ba72aC90E72",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x785080C437a7d188260b398FBAe0134D1009a660",
+    "amount": 2056496,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0xFb37CF728FD9650e1facADd9daDe04ecBA3c3327",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x432bf24BEB5197cDf99AE29aF9Bb32e3650A9120",
+    "amount": 10006449,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x039fCC851268Bb97acd16c1646a1e6225C814373",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xFB3ba9447a58b328e5C8A24B1F10A7393De2456F",
+    "amount": 60042560,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0xC2D1ebc0a1641821eeE7199AB8a8c68CE5dfAb69",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x3dE38A923603A1347d7D4998138Cc0162249b95c",
+    "amount": 3000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0xDA3436b8Ff5Bd161C678Ea53977b90D9697eC1d8",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x4322c4e1325B7B4377cf85f35A57986E85785Db3",
+    "amount": 9010000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x106B274c25e6b0ECBFF1308001C4f8876932A1F2",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x5f08E013a466c8bb2766fB2898cD23d90157DD3A",
+    "amount": 7000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x4C095a214459a26FcA37cD43bf5884CB55C74627",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x6e5E124562a9eD423c81eEF18A4932C952178085",
+    "amount": 2000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x9039152b1BfCB4BD6928527dC1eAA915d9971FA3",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xe7Ad38F24572Adbb1355e34276BcF71C7fcb33F7",
+    "amount": 2000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x805783831A6c7419A87AA22fdb45452777010A24",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xA62037Da9861Cab6C9a3B72051a5bD84947f8575",
+    "amount": 2000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0xDDeb1748cdf3A95EEc6137B96d5e00Af09E8Aa09",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x729787a87d16798E1D520B0bf24e7c23b2828Ff1",
+    "amount": 79705637,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x09A0771eF629869c8CC8d3FD68c0294B97a68a45",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x514462062ad5dcE1Da05De6c726e94d60ba08790",
+    "amount": 7200000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x7Bc803139935D83970bC8cFBAFF2B9B464AA7b4E",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xa7cf8B7Bfe13edaed3F81c2653c0C40262592E66",
+    "amount": 3000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x83cE79c8AaA8654055eD49338e2c144854ac588C",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x13a5e8d63f8334743b80216a009d5fE23a431DcB",
+    "amount": 1000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x837A6D9B578F8027a50fcf64a81E3A5346c294ED",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x9815502d517F7a04c5bD93deca06F9B1C38dBA52",
+    "amount": 3000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x5AF879b7Aebc17752FfD0ac8D717269c72bA1dA3",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x5d7616e9A8d64D5499073Ee1662baE37DDF97F51",
+    "amount": 2018863,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x1f6f11c49eE255a7ed5D12d8015F62968a6B18b1",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xbe1dF48cC4EcFd14DA58cCFCa5F0256746De465d",
+    "amount": 2000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0xC5768cb1DC5867EE36e9cf7EB5447240c265b077",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xEa8c594153443BBd696c6BdeA41ff10932C8A2cf",
+    "amount": 1982387,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x36b6CB9cB67569fBE98098Bb4DB7720755dD26F6",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xB74B9D71d1c3F1299ca0792F409e18bC2D6c2F6d",
+    "amount": 16939333,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0xC468806A3E744fe9c8Fe9c06d409E088b6943429",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x1E992FDeCecD9909bdF9b6C91ED85D6EaFa7f9E1",
+    "amount": 3037190,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x9898EA048088A55D24892189e3966160eeBCF4F7",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x4BDB8A38A5457392dfe90374fe60ae18FE05A905",
+    "amount": 631912,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x012FB843552439E7564Bd8bF0D12828C1cCbfAE8",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x60139e9151e0F900cba5858E2e6beae6eE91A71D",
+    "amount": 2666667,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x0BA70E1DAcC5864D59D880d0486929bc9fFC1Aa1",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x655A05337087A8511c91cf4AeB88d0a805400AB5",
+    "amount": 6600000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x934AFfb44A9fA12a15210B2b8cf0DfEEd1F8EdAD",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xf1D60A8CeD403bfB02BdbB9826a32972852b2649",
+    "amount": 13333333,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x3FDF39eda570F6C5C1F5A2B9A251c779fAd2F61C",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xdf8A5c2b13A56e6B74cC3E0038CDec7F26B50148",
+    "amount": 1242622,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0xf9bAdfC2f181e5A37a5b15955313060591b7C671",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x4EdB98c6bdcCFb9014Ee54FC8287bdcB5b0d8B71",
+    "amount": 2666667,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0xbAc830d349C1D2223EaEff7f54257019FC9E091C",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xfD60F42814766aC5aA3CC5eE126fB78721f3026a",
+    "amount": 1333333,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0xBeD89D81d6508A139119cf2f82B7280067f6F7C3",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x54C7C43725eFf8C198cC98A5659E91C1B1b31eB0",
+    "amount": 5333333,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x0b5166f95f0d7f378C58aB388150024ab7879Ae9",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x0Dda30aB2C162F126Bbc02564Df8Ba8061E1125A",
+    "amount": 13333333,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0xb46D3dBEB6c6Db3a43863c8222A21382C448A0C7",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xEd4B3f40e74561Ef11b84A15A794623a6cF91208",
+    "amount": 6666667,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x04B6329BF909019F867D3d6807A36B1596fEB266",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xE5895A0595F13E7f37844c29Cad892f5D87f4141",
+    "amount": 2666667,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x88CB32b46cb62257F924aB00F8e66392C7736A10",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x71423F5b4Edeab59b0630D67230BE4a5F358B0C7",
+    "amount": 7997501,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0xCF8BC1424d355188DAFBdd1ae684eeEdB1Ed8850",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x9A2d73F03BE9BeECe430b282ab79B129BA17aE87",
+    "amount": 2516348,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x6ff92C3739C62b425647AAb268bE09B47691cA3a",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x0b398778Bc2a1c9349EB511eaB44A68B1179B270",
+    "amount": 5017247,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0xc26AF5Ae065e6715290C21b307C4f7736F126035",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xd3587c1d695cf08a093aee45aa382e0d739d2e00",
+    "amount": 2040115,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0xae6E9B574b4fA8f7C3CF9adc479af6b52e622c71",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xeec9d7e6AeDE35ff3FD2910a26065237DAfFD719",
+    "amount": 8000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x56554c892b20Bd49746aFe280C2A4523EA775b70",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x0019BDa8C558917dfA50f8F550e76770b2EA1d00",
+    "amount": 3500000000,
+    "start": 1680213600,
+    "duration": 157680000,
+    "status": "token amount sent",
+    "contractAddress": "0x0fEA9701d1ba9D3B348195385c016F261413073D",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xA80AF73d17A588358DbbA78ef010542f62A4A334",
+    "amount": 1000000000,
+    "start": 1680213600,
+    "duration": 157680000,
+    "status": "token amount sent",
+    "contractAddress": "0x33e5D01F43f520c920992781A483d4B59D4AfAD2",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xb277E3C3E735a789c3FF7d25eb3Bd7d6941b739D",
+    "amount": 1000000000,
+    "start": 1680213600,
+    "duration": 157680000,
+    "status": "token amount sent",
+    "contractAddress": "0xc6466bbBEA970D482462AB8Cd9CBef2ab797e230",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xF6f96A871E733c1AcCAFbc402Da0f07a6bf53370",
+    "amount": 50000000,
+    "start": 1680213600,
+    "duration": 94608000,
+    "status": "token amount sent",
+    "contractAddress": "0xfAC43824b720B540d5bdad23C0e4eA27Ab028C29",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x767D40ceCa6A0dBDA4f21407c798477E5Bd93509",
+    "amount": 50000000,
+    "start": 1680213600,
+    "duration": 94608000,
+    "status": "token amount sent",
+    "contractAddress": "0xd23fbFFa9d323D71bB0890a27eb764E75F6E97FE",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x85C0005879DC22967Fe841760f97f9505505e965",
+    "amount": 50000000,
+    "start": 1680213600,
+    "duration": 94608000,
+    "status": "token amount sent",
+    "contractAddress": "0xa42002450C883370d6cc438F1Ba2c446FFB65597",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x1d3d7a8357c3c7a2a8a1a18abaf35933346aac78",
+    "amount": 2000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x92f412DFDEdeb31f00e750921606AfC6be9151cB",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x0788952A1278A77e233848e6d4c0971A6A198206",
+    "amount": 5000000,
+    "start": 1680213600,
+    "duration": 157680000,
+    "status": "token amount sent",
+    "contractAddress": "0x0891503b0c5792abf739Fb12471C6aD141db31Ba",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0x5A98E93b67B7BA3af7B1Ec9aCB3128aE2A6f8377",
+    "amount": 1000000,
+    "start": 1680213600,
+    "duration": 31536000,
+    "status": "token amount sent",
+    "contractAddress": "0x847A657D248d1975933d9fC0C71CD48289fcE0A8",
+    "giftAmount": "0.1"
+  },
+  {
+    "wallet": "0xca5d5c70a498e1ad63b245e0acb1f44e75fa416a",
+    "amount": 10000000,
+    "start": 1680213600,
+    "duration": 157680000,
+    "status": "token amount sent",
+    "contractAddress": "0xBa3e9cB82Ebe508c4Bd1bCE4CD0D45739840d3a0",
+    "giftAmount": "0.1"
+  }
+]

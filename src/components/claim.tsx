@@ -1,14 +1,59 @@
 import { TokenRow } from "@/app/atoms"
 import { faClock, faWallet } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { ethers } from "ethers"
+import { Contract, ethers } from "ethers"
+import { useState } from "react"
 
 interface Props {
-	provider: ethers.providers.Web3Provider | null
+	provider: ethers.providers.Web3Provider
 	address: string
 }
 
+const TOKEN_ADDRESS: string = "0x4FBaDBC05C4680e7756165D73194Ae373E18e15f"
+
 export function Claim({ provider, address }: Props) {
+	const [vesting, setVesting] = useState<any>(null)
+
+	const handleGetVesting = async () => {
+		try {
+			await provider.send("eth_requestAccounts", [])
+
+			const signer = provider.getSigner()
+
+			// Initilise the contract
+			const vesting = new Contract(
+				address,
+				require("../assets/json/vesting-abi.json").abi,
+				signer
+			)
+
+			const vestingBeneficiary = await vesting.beneficiary()
+			const vestingStart = await vesting.start()
+			const vestingDuration = await vesting.duration()
+			const vestingEnd = vestingStart.add(vestingDuration)
+			const vestingTotalVestingAmount = await vesting[
+				"vestedAmount(address,uint64)"
+			](address, vestingEnd)
+			const vestingReleasable = await vesting["releasable(address)"](
+				address
+			)
+			const vestingReleased = await vesting["released(address)"](address)
+
+			console.log(
+				vestingEnd,
+				vestingTotalVestingAmount,
+				vestingReleasable,
+				vestingReleased
+			)
+		} catch (error) {
+			console.error(error)
+		}
+	}
+
+	if (!vesting) {
+		handleGetVesting()
+	}
+
 	return (
 		<>
 			<div className="absolute mx-auto top-10 shadow shadow-primary/20 px-4 py-2 rounded-xl flex-row items-center justify-center hidden md:flex">

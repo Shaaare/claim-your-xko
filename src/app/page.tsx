@@ -35,7 +35,7 @@ export default function Home() {
 		setAddress(address)
 	}
 
-	return connected ? (
+	return connected && provider ? (
 		<Claim provider={provider} address={address} />
 	) : (
 		<Connect provider={provider} handleConnected={handleConnected} />
