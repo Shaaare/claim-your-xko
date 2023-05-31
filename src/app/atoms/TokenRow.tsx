@@ -6,7 +6,7 @@ interface Props {
 	title: string
 	hint?: string
 	amount: BigNumber
-	percent?: number
+	percent?: string
 }
 
 export function TokenRow({ title, hint, amount, percent, first }: Props) {

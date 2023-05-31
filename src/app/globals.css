@@ -7,6 +7,10 @@ body {
   background-color: white;
 }
 
-#connected-title {
+#text-with-gradient {
   color: transparent;
+}
+
+#outlined-button {
+  padding: 1px
 }

@@ -1,6 +1,14 @@
-import { TokenRow } from "@/app/atoms"
-import { formatBigNumber } from "@/app/utils"
-import { faClock, faWallet } from "@fortawesome/free-solid-svg-icons"
+import {
+	ClaimButton,
+	OutlinedButton,
+	TextWithGradient,
+	TokenRow,
+} from "@/app/atoms"
+import {
+	faArrowUpRightFromSquare,
+	faClock,
+	faWallet,
+} from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { BigNumber, Contract, ethers } from "ethers"
 import { formatEther } from "ethers/lib/utils"
@@ -33,17 +41,15 @@ const abi = require("../assets/json/vesting-abi.json").abi
 export function Claim({ provider, address }: Props) {
 	const [vesting, setVesting] = useState<any>(null)
 	const [end, setEnd] = useState<number>(0)
-	const [amounts, setAmounts] = useState<{
-		total: BigNumber
-		claimed: BigNumber
-		locked: BigNumber
-		releasable: BigNumber
-	}>({
+	const [amounts, setAmounts] = useState<VestingContractData>({
 		total: BigNumber.from(0),
 		claimed: BigNumber.from(0),
 		locked: BigNumber.from(0),
 		releasable: BigNumber.from(0),
 	})
+	const [hash, setHash] = useState<string>("")
+	const [claiming, setClaiming] = useState<boolean>(false)
+
 	const formattedEnd = useMemo(() => {
 		return new Date(end * 1000).toLocaleString("en-US", {
 			day: "numeric",
@@ -51,10 +57,11 @@ export function Claim({ provider, address }: Props) {
 			year: "numeric",
 		})
 	}, [end])
+
 	const remainingDays = useMemo(() => {
 		return Math.ceil(
-			new Date(end * 1000).getTime() -
-				new Date().getTime() / (1000 * 3600 * 24)
+			(new Date(end * 1000).getTime() - new Date().getTime()) /
+				(1000 * 3600 * 24)
 		)
 	}, [end])
 
@@ -62,7 +69,7 @@ export function Claim({ provider, address }: Props) {
 		const total = Math.floor(parseFloat(formatEther(amounts.total)))
 		const value = Math.floor(parseFloat(formatEther(amount)))
 		const percent = (value / total) * 100
-		return isNaN(percent) ? 0 : percent.toFixed(2)
+		return isNaN(percent) ? "0" : percent.toFixed(2)
 	}
 
 	const handleGetVesting = async () => {
@@ -77,7 +84,6 @@ export function Claim({ provider, address }: Props) {
 			if (!contract) throw new Error("No contract found for this address")
 
 			const vesting = new Contract(contract.contractAddress, abi, signer)
-
 			const vestingStart = await vesting.start()
 			const vestingDuration = await vesting.duration()
 			const vestingEnd = vestingStart.add(vestingDuration)
@@ -86,10 +92,6 @@ export function Claim({ provider, address }: Props) {
 		} catch (error) {
 			console.error(error)
 		}
-	}
-
-	if (!vesting) {
-		handleGetVesting()
 	}
 
 	const handleGetVestingData = useCallback(async () => {
@@ -110,11 +112,33 @@ export function Claim({ provider, address }: Props) {
 		}
 	}, [vesting, end])
 
+	const handleClaim = async () => {
+		try {
+			setClaiming(true)
+			const tx = await vesting["release(address)"](TOKEN_ADDRESS)
+			const { transactionHash } = await tx.wait()
+			setHash(transactionHash)
+			handleGetVestingData()
+		} catch (error) {
+			console.error(error)
+		} finally {
+			setClaiming(false)
+		}
+	}
+
+	const handleExploreTransaction = () => {
+		window.open(`https://polygonscan.com/tx/${hash}`)
+	}
+
 	useEffect(() => {
 		if (vesting) {
 			handleGetVestingData()
 		}
 	}, [vesting, handleGetVestingData])
+
+	if (!vesting) {
+		handleGetVesting()
+	}
 
 	return (
 		<>
@@ -122,12 +146,10 @@ export function Claim({ provider, address }: Props) {
 				<FontAwesomeIcon icon={faWallet} color={"#AA00FF"} />
 				<p className="ml-3 text-primary">{address}</p>
 			</div>
-			<h1
-				id="connected-title"
-				className="text-5xl md:text-7xl mx-auto text-center bg-clip-text bg-gradient-to-r from-danger to-primary"
-			>
-				Open, Sesame!
-			</h1>
+			<TextWithGradient
+				content="Open, Sesame"
+				className="text-5xl md:text-7xl mx-auto text-center"
+			/>
 			<div className="w-10/12 md:w-6/12 flex flex-col mt-10">
 				<p className="ml-auto text-grey text-xs mb-1.5">
 					<FontAwesomeIcon
@@ -157,8 +179,20 @@ export function Claim({ provider, address }: Props) {
 						</p>
 					</div>
 				</div>
-				<div className="mt-12 shadow-lg shadow-danger/20 rounded-3xl md:p-8 p-4 lg:w-10/12 md:w-full w-full mx-auto">
-					<TokenRow first title="Total" amount={amounts.total} />
+				<div className="mt-12 shadow-lg shadow-danger/20 rounded-3xl md:p-8 p-4 lg:w-10/12 md:w-full w-full mx-auto flex flex-col">
+					{hash ? (
+						<OutlinedButton
+							emoji="🎉 "
+							content="Your XKO have been claimed"
+							icon={faArrowUpRightFromSquare}
+							onClick={handleExploreTransaction}
+						/>
+					) : null}
+					<TokenRow
+						first={!hash}
+						title="Total"
+						amount={amounts.total}
+					/>
 					<TokenRow
 						title="Already claimed"
 						amount={amounts.claimed}
@@ -178,9 +212,18 @@ export function Claim({ provider, address }: Props) {
 						percent={getPercentOfTotal(amounts.releasable)}
 					/>
 				</div>
-				<button className="mt-12 bg-gradient-to-r from-danger to-primary text-white rounded-full py-2 px-4 lg:w-6/12 md:6/12  mx-auto">
-					🎉 Claim my {formatBigNumber(amounts.releasable)} XKO
-				</button>
+				{amounts.total && amounts.total === amounts.claimed ? (
+					<OutlinedButton
+						emoji="🎉"
+						content="You have claimed all your XKO"
+					/>
+				) : (
+					<ClaimButton
+						loading={claiming}
+						releasable={amounts.releasable}
+						onClick={handleClaim}
+					/>
+				)}
 			</div>
 		</>
 	)
