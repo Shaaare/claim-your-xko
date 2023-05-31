@@ -1,7 +1,9 @@
 import { TokenRow } from "@/app/atoms"
+import { formatBigNumber } from "@/app/utils"
 import { faClock, faWallet } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { BigNumber, Contract, ethers } from "ethers"
+import { formatEther } from "ethers/lib/utils"
 import { useCallback, useEffect, useMemo, useState } from "react"
 
 type VestingContract = {
@@ -31,7 +33,12 @@ const abi = require("../assets/json/vesting-abi.json").abi
 export function Claim({ provider, address }: Props) {
 	const [vesting, setVesting] = useState<any>(null)
 	const [end, setEnd] = useState<number>(0)
-	const [amounts, setAmounts] = useState<>({
+	const [amounts, setAmounts] = useState<{
+		total: BigNumber
+		claimed: BigNumber
+		locked: BigNumber
+		releasable: BigNumber
+	}>({
 		total: BigNumber.from(0),
 		claimed: BigNumber.from(0),
 		locked: BigNumber.from(0),
@@ -44,6 +51,19 @@ export function Claim({ provider, address }: Props) {
 			year: "numeric",
 		})
 	}, [end])
+	const remainingDays = useMemo(() => {
+		return Math.ceil(
+			new Date(end * 1000).getTime() -
+				new Date().getTime() / (1000 * 3600 * 24)
+		)
+	}, [end])
+
+	const getPercentOfTotal = (amount: BigNumber) => {
+		const total = Math.floor(parseFloat(formatEther(amounts.total)))
+		const value = Math.floor(parseFloat(formatEther(amount)))
+		const percent = (value / total) * 100
+		return isNaN(percent) ? 0 : percent.toFixed(2)
+	}
 
 	const handleGetVesting = async () => {
 		try {
@@ -119,39 +139,47 @@ export function Claim({ provider, address }: Props) {
 				</p>
 				<div className="w-full  h-4 bg-info-light rounded-full relative">
 					<div className="h-full w-full overflow-hidden">
-						<div className="w-1/2 h-full bg-gradient-to-r from-danger to-primary rounded-full"></div>
+						<div
+							style={{
+								width: `${getPercentOfTotal(amounts.claimed)}%`,
+							}}
+							className="h-full bg-gradient-to-r from-danger to-primary rounded-full"
+						></div>
 					</div>
-					<div className="w-1/2 h-full flex relative">
+					<div
+						style={{
+							width: `${getPercentOfTotal(amounts.claimed)}%`,
+						}}
+						className="h-full flex relative"
+					>
 						<p className="text-black absolute right-[-12px] text-xs mt-2">
-							30%
+							{getPercentOfTotal(amounts.claimed)}%
 						</p>
 					</div>
 				</div>
 				<div className="mt-12 shadow-lg shadow-danger/20 rounded-3xl md:p-8 p-4 lg:w-10/12 md:w-full w-full mx-auto">
-					<TokenRow
-						first
-						title="Total"
-						amount={amounts.total.toNumber()}
-					/>
+					<TokenRow first title="Total" amount={amounts.total} />
 					<TokenRow
 						title="Already claimed"
-						amount={amounts.claimed.toNumber()}
-						percent={10}
+						amount={amounts.claimed}
+						percent={getPercentOfTotal(amounts.claimed)}
 					/>
 					<TokenRow
 						title="Locked"
-						hint="(71 days remaining)"
-						amount={amounts.locked.toNumber()}
-						percent={70}
+						hint={`(${remainingDays.toLocaleString()} day${
+							remainingDays > 1 ? "s" : ""
+						} remaining)`}
+						amount={amounts.locked}
+						percent={getPercentOfTotal(amounts.locked)}
 					/>
 					<TokenRow
 						title="🎉 You are now able to claim"
-						amount={amounts.releasable.toNumber()}
-						percent={10}
+						amount={amounts.releasable}
+						percent={getPercentOfTotal(amounts.releasable)}
 					/>
 				</div>
 				<button className="mt-12 bg-gradient-to-r from-danger to-primary text-white rounded-full py-2 px-4 lg:w-6/12 md:6/12  mx-auto">
-					🎉 Claim my 2 000 000 XKO
+					🎉 Claim my {formatBigNumber(amounts.releasable)} XKO
 				</button>
 			</div>
 		</>

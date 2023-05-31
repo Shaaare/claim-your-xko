@@ -1,8 +1,11 @@
+import { BigNumber } from "ethers"
+import { formatBigNumber } from "../utils"
+
 interface Props {
 	first?: boolean
 	title: string
 	hint?: string
-	amount: number
+	amount: BigNumber
 	percent?: number
 }
 
@@ -18,11 +21,16 @@ export function TokenRow({ title, hint, amount, percent, first }: Props) {
 					{title} <span className="text-dark-grey">{hint}</span>:
 				</p>
 				<p className="text-base">
-					<span className="font-semibold">{amount}</span> XKO
-					<span className="text-dark-grey text-sm">
-						{" "}
-						({percent}%)
-					</span>
+					<span className="font-semibold">
+						{formatBigNumber(amount)}
+					</span>{" "}
+					XKO
+					{percent ? (
+						<span className="text-dark-grey text-sm">
+							{" "}
+							({percent}%)
+						</span>
+					) : null}
 				</p>
 			</div>
 		</>
