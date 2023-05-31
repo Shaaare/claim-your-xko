@@ -12,7 +12,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { BigNumber, Contract, ethers } from "ethers"
 import { formatEther } from "ethers/lib/utils"
-import { useCallback, useEffect, useMemo, useState } from "react"
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 
 type VestingContract = {
 	wallet: string
@@ -39,6 +39,7 @@ const contracts: VestingContract[] = require("../assets/json/vesting-contracts.j
 const abi = require("../assets/json/vesting-abi.json").abi
 
 export function Claim({ provider, address }: Props) {
+	const fetchInterval = useRef<any>(null)
 	const [vesting, setVesting] = useState<any>(null)
 	const [end, setEnd] = useState<number>(0)
 	const [amounts, setAmounts] = useState<VestingContractData>({
@@ -115,10 +116,12 @@ export function Claim({ provider, address }: Props) {
 	const handleClaim = async () => {
 		try {
 			setClaiming(true)
+			clearInterval(fetchInterval.current)
 			const tx = await vesting["release(address)"](TOKEN_ADDRESS)
 			const { transactionHash } = await tx.wait()
 			setHash(transactionHash)
 			handleGetVestingData()
+			handleLaunchFetchInterval()
 		} catch (error) {
 			console.error(error)
 		} finally {
@@ -130,21 +133,24 @@ export function Claim({ provider, address }: Props) {
 		window.open(`https://polygonscan.com/tx/${hash}`)
 	}
 
+	const handleLaunchFetchInterval = useCallback(() => {
+		fetchInterval.current = setInterval(() => {
+			handleGetVestingData()
+		}, 30000)
+	}, [handleGetVestingData])
+
 	useEffect(() => {
 		if (vesting) {
 			handleGetVestingData()
+			handleLaunchFetchInterval()
 		}
-	}, [vesting, handleGetVestingData])
+	}, [vesting, handleGetVestingData, handleLaunchFetchInterval])
 
 	useEffect(() => {
-		if (vesting) {
-			let interval = setInterval(() => {
-				handleGetVestingData()
-			}, 5000)
-
-			return () => clearInterval(interval)
+		return () => {
+			clearInterval(fetchInterval.current)
 		}
-	}, [vesting, handleGetVestingData])
+	}, [])
 
 	if (!vesting) {
 		handleGetVesting()
@@ -236,7 +242,7 @@ export function Claim({ provider, address }: Props) {
 							onClick={handleClaim}
 						/>
 						<p className="mx-auto text-xs text-grey mt-2">
-							Refreshed every 5 sec.
+							Refreshed every 30 sec.
 						</p>
 					</>
 				)}
