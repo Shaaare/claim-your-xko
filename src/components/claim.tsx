@@ -136,6 +136,16 @@ export function Claim({ provider, address }: Props) {
 		}
 	}, [vesting, handleGetVestingData])
 
+	useEffect(() => {
+		if (vesting) {
+			let interval = setInterval(() => {
+				handleGetVestingData()
+			}, 5000)
+
+			return () => clearInterval(interval)
+		}
+	}, [vesting, handleGetVestingData])
+
 	if (!vesting) {
 		handleGetVesting()
 	}
@@ -210,6 +220,7 @@ export function Claim({ provider, address }: Props) {
 						title="🎉 You are now able to claim"
 						amount={amounts.releasable}
 						percent={getPercentOfTotal(amounts.releasable)}
+						animated
 					/>
 				</div>
 				{amounts.total && amounts.total === amounts.claimed ? (
@@ -218,11 +229,16 @@ export function Claim({ provider, address }: Props) {
 						content="You have claimed all your XKO"
 					/>
 				) : (
-					<ClaimButton
-						loading={claiming}
-						releasable={amounts.releasable}
-						onClick={handleClaim}
-					/>
+					<>
+						<ClaimButton
+							loading={claiming}
+							releasable={amounts.releasable}
+							onClick={handleClaim}
+						/>
+						<p className="mx-auto text-xs text-grey mt-2">
+							Refreshed every 5 sec.
+						</p>
+					</>
 				)}
 			</div>
 		</>

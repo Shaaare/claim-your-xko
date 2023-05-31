@@ -1,4 +1,5 @@
 export * from "./ClaimButton"
+export * from "./Numbers"
 export * from "./OutlinedButton"
 export * from "./TextWithGradient"
 export * from "./TokenRow"

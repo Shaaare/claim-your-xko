@@ -1,15 +1,25 @@
 import { BigNumber } from "ethers"
+import { formatEther } from "ethers/lib/utils"
 import { formatBigNumber } from "../utils"
+import { Numbers } from "./Numbers"
 
 interface Props {
 	first?: boolean
+	animated?: boolean
 	title: string
 	hint?: string
 	amount: BigNumber
 	percent?: string
 }
 
-export function TokenRow({ title, hint, amount, percent, first }: Props) {
+export function TokenRow({
+	title,
+	hint,
+	animated,
+	amount,
+	percent,
+	first,
+}: Props) {
 	return (
 		<>
 			<div
@@ -20,18 +30,33 @@ export function TokenRow({ title, hint, amount, percent, first }: Props) {
 				<p className="text-sm md:text-base">
 					{title} <span className="text-dark-grey">{hint}</span>:
 				</p>
-				<p className="text-base">
-					<span className="font-semibold">
-						{formatBigNumber(amount)}
-					</span>{" "}
-					XKO
-					{percent ? (
-						<span className="text-dark-grey text-sm">
-							{" "}
-							({percent}%)
+				{animated ? (
+					<div className="flex items-center">
+						<Numbers
+							animateToNumber={Math.floor(
+								parseFloat(formatEther(amount))
+							)}
+						/>
+						&nbsp;XKO
+						{percent ? (
+							<span className="text-dark-grey text-sm">
+								&nbsp;({percent}%)
+							</span>
+						) : null}
+					</div>
+				) : (
+					<p className="text-base flex items-center">
+						<span className="font-semibold">
+							{formatBigNumber(amount)}
 						</span>
-					) : null}
-				</p>
+						&nbsp;XKO
+						{percent ? (
+							<span className="text-dark-grey text-sm">
+								&nbsp;({percent}%)
+							</span>
+						) : null}
+					</p>
+				)}
 			</div>
 		</>
 	)
