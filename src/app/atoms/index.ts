@@ -1,3 +1,4 @@
+export * from "./ButtonWithGradient"
 export * from "./ClaimButton"
 export * from "./Numbers"
 export * from "./OutlinedButton"

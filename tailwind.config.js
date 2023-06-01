@@ -14,7 +14,8 @@ module.exports = {
       'info-light': "#E2E8F0",
       'dark-grey': '#7C7580',
       grey: '#B5AEB8',
-      danger: '#FF1477'
+      danger: '#FF1477',
+      success: '#4EF500'
     },
     extend: {
       backgroundImage: {
