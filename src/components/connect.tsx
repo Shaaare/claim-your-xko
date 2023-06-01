@@ -9,7 +9,18 @@ interface Props {
 	handleConnected: (address: string) => void
 }
 
+type VestingContract = {
+	wallet: string
+	amount: number
+	start: number
+	duration: number
+	contractAddress: string
+}
+
+const contracts: VestingContract[] = require("../assets/json/vesting-contracts.json")
+
 export function Connect({ provider, handleConnected }: Props) {
+	const [unknownAddress, setUnknownAddress] = useState<boolean>(false)
 	const [maticRpcAdded, setMaticRpcAdded] = useState<boolean>(false)
 	const [xkoTokenAdded, setXkoTokenAdded] = useState<boolean>(false)
 
@@ -24,6 +35,14 @@ export function Connect({ provider, handleConnected }: Props) {
 			.send("eth_requestAccounts", [])
 			.then(async (accounts: string[]) => {
 				if (accounts.length) {
+					const contract = contracts.find(
+						(contract) =>
+							contract.wallet.toLowerCase() ===
+							accounts[0].toLowerCase()
+					)
+
+					if (!contract) return setUnknownAddress(true)
+
 					handleConnected(accounts[0])
 				}
 			})
@@ -91,9 +110,22 @@ export function Connect({ provider, handleConnected }: Props) {
 				your early investment!
 			</p>
 			{maticRpcAdded && xkoTokenAdded ? (
-				<ButtonWithGradient className="mt-10" onClick={handleConnect}>
-					Connect my wallet
-				</ButtonWithGradient>
+				<>
+					<div className="mt-10 mx-auto flex flex-col justify-center items-center">
+						{unknownAddress ? (
+							<p className="text-danger text-center">
+								Your address is not associated with any vesting
+								contract.
+							</p>
+						) : null}
+						<ButtonWithGradient
+							className={`${unknownAddress ? "mt-3" : ""}`}
+							onClick={handleConnect}
+						>
+							Connect my wallet
+						</ButtonWithGradient>
+					</div>
+				</>
 			) : (
 				<div className="flex flex-col md:flex-row items-center mt-10">
 					<ButtonWithGradient
