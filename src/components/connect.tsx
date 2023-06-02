@@ -55,7 +55,7 @@ export function Connect({ provider, handleConnected }: Props) {
 			.send("wallet_addEthereumChain", [
 				{
 					chainId: "0x89",
-					chainName: "Matic Mainnet",
+					chainName: "Polygon Mainnet",
 					nativeCurrency: {
 						name: "MATIC",
 						symbol: "MATIC",
