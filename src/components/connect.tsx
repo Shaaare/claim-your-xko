@@ -95,6 +95,10 @@ export function Connect({ provider, handleConnected }: Props) {
 			})
 	}
 
+	const handleInstallMetaMask = () => {
+		window.open("https://metamask.io/download/", "_blank")
+	}
+
 	return (
 		<>
 			<h1 className="text-5xl md:text-7xl mx-auto text-center">
@@ -109,9 +113,12 @@ export function Connect({ provider, handleConnected }: Props) {
 				Your friends deserve more XKOs.<br></br>Tip them today thanks to
 				your early investment!
 			</p>
-			{maticRpcAdded && xkoTokenAdded ? (
-				<>
-					<div className="mt-10 mx-auto flex flex-col justify-center items-center">
+			<div className="mt-10 mx-auto flex md:flex-row flex-col justify-center items-center">
+				<ButtonWithGradient onClick={handleInstallMetaMask}>
+					Install MetaMask extension
+				</ButtonWithGradient>
+				{maticRpcAdded && xkoTokenAdded ? (
+					<>
 						{unknownAddress ? (
 							<p className="text-danger text-center">
 								Your address is not associated with any vesting
@@ -124,40 +131,40 @@ export function Connect({ provider, handleConnected }: Props) {
 						>
 							Connect my wallet
 						</ButtonWithGradient>
-					</div>
-				</>
-			) : (
-				<div className="flex flex-col md:flex-row items-center mt-10">
-					<ButtonWithGradient
-						disabled={xkoTokenAdded}
-						className={`flex-row items-center`}
-						onClick={handleAddXkoToken}
-					>
-						{xkoTokenAdded ? (
-							<FontAwesomeIcon
-								icon={faCheck}
-								color="#4EF500"
-								className="mr-1"
-							/>
-						) : null}
-						Add XKO token to Metamask
-					</ButtonWithGradient>
-					<ButtonWithGradient
-						disabled={maticRpcAdded}
-						className={`md:ml-4 mt-4 md:mt-0 flex-row items-center`}
-						onClick={handleAddMaticRpc}
-					>
-						{maticRpcAdded ? (
-							<FontAwesomeIcon
-								icon={faCheck}
-								color="#4EF500"
-								className="mr-1"
-							/>
-						) : null}
-						Add Matic RPC to Metamask
-					</ButtonWithGradient>
-				</div>
-			)}
+					</>
+				) : (
+					<>
+						<ButtonWithGradient
+							disabled={xkoTokenAdded}
+							className={`flex-row items-center md:mx-4 `}
+							onClick={handleAddXkoToken}
+						>
+							{xkoTokenAdded ? (
+								<FontAwesomeIcon
+									icon={faCheck}
+									color="#4EF500"
+									className="mr-1"
+								/>
+							) : null}
+							Add XKO token
+						</ButtonWithGradient>
+						<ButtonWithGradient
+							disabled={maticRpcAdded}
+							className={`mt-4 md:mt-0 flex-row items-center`}
+							onClick={handleAddMaticRpc}
+						>
+							{maticRpcAdded ? (
+								<FontAwesomeIcon
+									icon={faCheck}
+									color="#4EF500"
+									className="mr-1"
+								/>
+							) : null}
+							Add Polygon RPC
+						</ButtonWithGradient>
+					</>
+				)}
+			</div>
 
 			<p className="text-dark-grey text-xs w-9/12 md:w-4/12 text-center mt-4">
 				Your investment is private for safety reasons, Please connect
