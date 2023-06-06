@@ -170,7 +170,7 @@ export function Claim({ provider, address }: Props) {
 			</div>
 			<TextWithGradient
 				content="Open, Sesame"
-				className="text-5xl md:text-7xl mx-auto text-center mt-4"
+				className="text-5xl md:text-7xl mx-auto text-center mt-4 md:mt-12"
 			/>
 			<div className="w-10/12 md:w-6/12 flex flex-col mt-10">
 				<p className="ml-auto text-grey text-xs mb-1.5">
