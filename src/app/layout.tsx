@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata = {
 	title: "Claim Your XKO | Smartness SAS",
 	description:
-		"Claim your XKO tokens from your Smartness SAS vesting contract",
+		"Claim your XKO tokens from your Smartness SAS vesting contract.",
 }
 
 export default function RootLayout({
