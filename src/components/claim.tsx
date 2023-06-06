@@ -246,7 +246,7 @@ export function Claim({ provider, address }: Props) {
 							releasable={amounts.releasable}
 							onClick={handleClaim}
 						/>
-						<p className="mx-auto text-xs text-grey mt-2">
+						<p className="mx-auto text-xs text-grey mt-2 mb-8">
 							Refreshed every 30 sec.
 						</p>
 					</>
