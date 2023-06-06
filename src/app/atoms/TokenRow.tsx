@@ -29,7 +29,8 @@ function TokenRowToMemo({
 				}`}
 			>
 				<p className="text-sm md:text-base">
-					{title} <span className="text-dark-grey">{hint}</span>:
+					{title}
+					<span className="text-dark-grey">{hint}</span>:
 				</p>
 				{animated ? (
 					<div className="flex items-center">
