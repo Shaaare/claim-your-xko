@@ -25,23 +25,29 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={inter.className}>
 				<main className="min-h-screen max-w-screen container bg-white mx-auto relative">
-					<button className="h-9 absolute md:top-10 top-3 right-3 bg-info/20 hover:bg-info/25 z-10 px-4 flex justify-center items-center rounded-full">
-						<FontAwesomeIcon
-							icon={faInfoCircle}
-							color={"#008BFF"}
-							className="mr-1 h-5 w-5"
-						/>
-						<p className="text-info text-sm font-semibold">Help</p>
-					</button>
+					<section className="min-h-screen flex flex-col">
+						<div className="h-full flex grow flex-col justify-center items-center">
+							{children}
+						</div>
 
-					<section className="min-h-screen flex flex-col justify-center items-center">
-						{children}
-					</section>
-
-					<section className="absolute left-0 bottom-0 right-0 flex justify-center items-center py-6">
-						<p className="text-grey text-sm">
-							{currentYear} Smartness SAS - kopain ©
-						</p>
+						<footer className="mt-auto flex justify-center items-center pb-6 flex-col md:flex-row">
+							<button className="h-9 flex justify-center items-center rounded-full">
+								<FontAwesomeIcon
+									icon={faInfoCircle}
+									color={"#008BFF"}
+									className="mr-1 h-5 w-5"
+								/>
+								<p className="text-info text-sm font-semibold">
+									Help
+								</p>
+							</button>
+							<span className="mx-2 hidden md:flex text-grey text-sm">
+								|
+							</span>
+							<p className="text-grey text-sm">
+								{currentYear} Smartness SAS - kopain ©
+							</p>
+						</footer>
 					</section>
 				</main>
 			</body>
