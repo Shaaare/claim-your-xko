@@ -101,7 +101,7 @@ export function Connect({ provider, handleConnected }: Props) {
 
 	return (
 		<>
-			<h1 className="text-5xl md:text-7xl mx-auto text-center">
+			<h1 className="text-5xl md:text-7xl mx-auto text-center mt-8">
 				{/*  */}
 				You'd like to{" "}
 				<span className="md:none">

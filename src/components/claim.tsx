@@ -158,15 +158,19 @@ export function Claim({ provider, address }: Props) {
 
 	return (
 		<>
-			<div className="mx-auto shadow shadow-primary/20 px-4 py-2 rounded-xl flex flex-row items-center justify-center mb-2">
-				<FontAwesomeIcon icon={faWallet} color={"#AA00FF"} />
-				<p className="ml-3 text-primary text-xs md:text-base">
+			<div className="mx-auto shadow shadow-primary/20 px-1 md:px-4 py-2 mt-6 rounded-xl flex flex-row items-center justify-center">
+				<FontAwesomeIcon
+					icon={faWallet}
+					color={"#AA00FF"}
+					className="hidden md:flex"
+				/>
+				<p className="ml-0 md:ml-3 text-primary text-xs md:text-base">
 					{address}
 				</p>
 			</div>
 			<TextWithGradient
 				content="Open, Sesame"
-				className="text-5xl md:text-7xl mx-auto text-center"
+				className="text-5xl md:text-7xl mx-auto text-center mt-4"
 			/>
 			<div className="w-10/12 md:w-6/12 flex flex-col mt-10">
 				<p className="ml-auto text-grey text-xs mb-1.5">
