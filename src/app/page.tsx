@@ -11,18 +11,23 @@ export default function Home() {
 	const [address, setAddress] = useState<string>("")
 
 	useEffect(() => {
-		window.ethereum.on("chainChanged", function (chainId: string) {
-			window.location.reload()
-		})
-
-		window.ethereum.on("accountsChanged", function (accounts: string[]) {
-			if (accounts[0] !== address) {
+		if (window.ethereum) {
+			window.ethereum.on("chainChanged", function (chainId: string) {
 				window.location.reload()
-			}
-		})
+			})
 
-		return () => {
-			window.ethereum.removeAllListeners()
+			window.ethereum.on(
+				"accountsChanged",
+				function (accounts: string[]) {
+					if (accounts[0] !== address) {
+						window.location.reload()
+					}
+				}
+			)
+
+			return () => {
+				window.ethereum.removeAllListeners()
+			}
 		}
 	}, [address])
 
