@@ -1,5 +1,6 @@
 import { BigNumber } from "ethers"
 import { formatEther } from "ethers/lib/utils"
+import { memo } from "react"
 import { formatBigNumber } from "../utils"
 import { Numbers } from "./Numbers"
 
@@ -12,7 +13,7 @@ interface Props {
 	percent?: string
 }
 
-export function TokenRow({
+function TokenRowToMemo({
 	title,
 	hint,
 	animated,
@@ -61,3 +62,5 @@ export function TokenRow({
 		</>
 	)
 }
+
+export const TokenRow = memo(TokenRowToMemo)
