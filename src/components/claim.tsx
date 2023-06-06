@@ -159,11 +159,10 @@ export function Claim({ provider, address }: Props) {
 	return (
 		<>
 			<div className="mx-auto shadow shadow-primary/20 px-1 md:px-4 py-2 mt-6 rounded-xl flex flex-row items-center justify-center">
-				<FontAwesomeIcon
-					icon={faWallet}
-					color={"#AA00FF"}
-					className="hidden md:flex"
-				/>
+				<div className="hidden md:flex">
+					<FontAwesomeIcon icon={faWallet} color={"#AA00FF"} />
+				</div>
+
 				<p className="ml-0 md:ml-3 text-primary text-xs md:text-base">
 					{address}
 				</p>
