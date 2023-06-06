@@ -195,7 +195,7 @@ export function Claim({ provider, address }: Props) {
 						</p>
 					</div>
 				</div>
-				<div className="mt-12 shadow-lg shadow-danger/20 rounded-3xl md:p-8 p-4 lg:w-10/12 md:w-full w-full mx-auto flex flex-col">
+				<div className="mt-12 shadow-lg shadow-danger/20 rounded-3xl md:p-8 p-4 w-full mx-auto flex flex-col">
 					{hash ? (
 						<OutlinedButton
 							emoji="🎉 "
