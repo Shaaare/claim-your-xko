@@ -107,67 +107,65 @@ export function Connect({ provider, handleConnected }: Props) {
 				<span className="md:none">
 					<br></br>
 				</span>{" "}
-				<span className="text-danger">tip</span> more ?
+				<span className="text-danger">tip</span> more?
 			</h1>
 			<p className="text-dark-grey text-center mt-8 w-9/12">
 				Your friends deserve more XKOs.<br></br>Tip them today thanks to
 				your early investment!
 			</p>
-			<div className="mt-10 mx-auto flex md:flex-row flex-col justify-center items-center">
-				<ButtonWithGradient onClick={handleInstallMetaMask}>
-					Install MetaMask extension
-				</ButtonWithGradient>
-				{maticRpcAdded && xkoTokenAdded ? (
-					<>
-						{unknownAddress ? (
-							<p className="text-danger text-center">
-								Your address is not associated with any vesting
-								contract.
-							</p>
+			<div className="mt-10 mx-auto">
+				{unknownAddress ? (
+					<p className="text-danger text-center">
+						Your address is not associated with any vesting
+						contract.
+					</p>
+				) : null}
+				<div className="flex md:flex-row flex-col justify-center items-center">
+					<ButtonWithGradient
+						onClick={handleInstallMetaMask}
+						className="mt-4"
+					>
+						1. Install MetaMask extension
+					</ButtonWithGradient>
+					<ButtonWithGradient
+						disabled={xkoTokenAdded}
+						className={`flex-row items-center md:mx-4 mt-4`}
+						onClick={handleAddXkoToken}
+					>
+						{xkoTokenAdded ? (
+							<FontAwesomeIcon
+								icon={faCheck}
+								color="#4EF500"
+								className="mr-1"
+							/>
 						) : null}
-						<ButtonWithGradient
-							className={`${unknownAddress ? "mt-3" : ""}`}
-							onClick={handleConnect}
-						>
-							Connect my wallet
-						</ButtonWithGradient>
-					</>
-				) : (
-					<>
-						<ButtonWithGradient
-							disabled={xkoTokenAdded}
-							className={`flex-row items-center md:mx-4 `}
-							onClick={handleAddXkoToken}
-						>
-							{xkoTokenAdded ? (
-								<FontAwesomeIcon
-									icon={faCheck}
-									color="#4EF500"
-									className="mr-1"
-								/>
-							) : null}
-							Add XKO token
-						</ButtonWithGradient>
-						<ButtonWithGradient
-							disabled={maticRpcAdded}
-							className={`mt-4 md:mt-0 flex-row items-center`}
-							onClick={handleAddMaticRpc}
-						>
-							{maticRpcAdded ? (
-								<FontAwesomeIcon
-									icon={faCheck}
-									color="#4EF500"
-									className="mr-1"
-								/>
-							) : null}
-							Add Polygon RPC
-						</ButtonWithGradient>
-					</>
-				)}
+						2. Add XKO token
+					</ButtonWithGradient>
+					<ButtonWithGradient
+						disabled={maticRpcAdded}
+						className={`mt-4 flex-row items-center`}
+						onClick={handleAddMaticRpc}
+					>
+						{maticRpcAdded ? (
+							<FontAwesomeIcon
+								icon={faCheck}
+								color="#4EF500"
+								className="mr-1"
+							/>
+						) : null}
+						3. Add Polygon RPC
+					</ButtonWithGradient>
+					<ButtonWithGradient
+						className={`md:ml-4 mt-4`}
+						onClick={handleConnect}
+					>
+						4. Connect my wallet
+					</ButtonWithGradient>
+				</div>
 			</div>
 
 			<p className="text-dark-grey text-xs w-9/12 md:w-4/12 text-center mt-4">
-				Your investment is private for safety reasons, Please connect
+				Your investment is private for safety reasons, please connect
 				your wallet to access your personal investor dashboard.
 			</p>
 		</>
