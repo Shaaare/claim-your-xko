@@ -19,7 +19,7 @@ export default function Home() {
 			window.ethereum.on(
 				"accountsChanged",
 				function (accounts: string[]) {
-					if (accounts[0] !== address) {
+					if (address && accounts[0] !== address) {
 						window.location.reload()
 					}
 				}
