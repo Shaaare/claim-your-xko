@@ -129,7 +129,7 @@ export function Connect({ provider, handleConnected }: Props) {
 					</ButtonWithGradient>
 					<ButtonWithGradient
 						disabled={maticRpcAdded}
-						className={`mt-4 flex-row items-center`}
+						className={`mt-4 flex-row items-center md:mx-4`}
 						onClick={handleAddMaticRpc}
 					>
 						{maticRpcAdded ? (
@@ -143,7 +143,7 @@ export function Connect({ provider, handleConnected }: Props) {
 					</ButtonWithGradient>
 					<ButtonWithGradient
 						disabled={xkoTokenAdded}
-						className={`flex-row items-center md:mx-4 mt-4`}
+						className={`flex-row items-center mt-4`}
 						onClick={handleAddXkoToken}
 					>
 						{xkoTokenAdded ? (

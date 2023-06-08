@@ -1,13 +1,10 @@
 import "@fortawesome/fontawesome-svg-core/styles.css"
-import { Inter } from "next/font/google"
 import "./globals.css"
 
 import { config } from "@fortawesome/fontawesome-svg-core"
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 config.autoAddCss = false
-
-const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
 	title: "Claim Your XKO | Smartness SAS",
@@ -23,7 +20,7 @@ export default function RootLayout({
 	const currentYear = new Date().getFullYear()
 	return (
 		<html lang="en">
-			<body className={inter.className}>
+			<body>
 				<main className="min-h-screen max-w-screen container bg-white mx-auto relative">
 					<section className="min-h-screen flex flex-col">
 						<div className="h-full flex grow flex-col justify-center items-center">
