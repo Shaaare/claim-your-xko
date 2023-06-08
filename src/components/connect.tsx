@@ -164,7 +164,7 @@ export function Connect({ provider, handleConnected }: Props) {
 				</div>
 			</div>
 
-			<p className="text-dark-grey text-xs w-9/12 md:w-4/12 text-center mt-4">
+			<p className="text-dark-grey text-xs w-9/12 md:w-4/12 text-center mt-4 mb-8">
 				Please set your network to Polygon Mainnet.
 				<br></br>
 				Your investment is private for safety reasons, please connect
