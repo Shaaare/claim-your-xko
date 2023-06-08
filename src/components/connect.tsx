@@ -128,20 +128,6 @@ export function Connect({ provider, handleConnected }: Props) {
 						1. Install MetaMask extension
 					</ButtonWithGradient>
 					<ButtonWithGradient
-						disabled={xkoTokenAdded}
-						className={`flex-row items-center md:mx-4 mt-4`}
-						onClick={handleAddXkoToken}
-					>
-						{xkoTokenAdded ? (
-							<FontAwesomeIcon
-								icon={faCheck}
-								color="#4EF500"
-								className="mr-1"
-							/>
-						) : null}
-						2. Add XKO token
-					</ButtonWithGradient>
-					<ButtonWithGradient
 						disabled={maticRpcAdded}
 						className={`mt-4 flex-row items-center`}
 						onClick={handleAddMaticRpc}
@@ -153,7 +139,21 @@ export function Connect({ provider, handleConnected }: Props) {
 								className="mr-1"
 							/>
 						) : null}
-						3. Add Polygon RPC
+						2. Add Polygon RPC
+					</ButtonWithGradient>
+					<ButtonWithGradient
+						disabled={xkoTokenAdded}
+						className={`flex-row items-center md:mx-4 mt-4`}
+						onClick={handleAddXkoToken}
+					>
+						{xkoTokenAdded ? (
+							<FontAwesomeIcon
+								icon={faCheck}
+								color="#4EF500"
+								className="mr-1"
+							/>
+						) : null}
+						3. Add XKO token
 					</ButtonWithGradient>
 					<ButtonWithGradient
 						className={`md:ml-4 mt-4`}
@@ -165,6 +165,8 @@ export function Connect({ provider, handleConnected }: Props) {
 			</div>
 
 			<p className="text-dark-grey text-xs w-9/12 md:w-4/12 text-center mt-4">
+				Please set your network to Polygon Mainnet.
+				<br></br>
 				Your investment is private for safety reasons, please connect
 				your wallet to access your personal investor dashboard.
 			</p>
