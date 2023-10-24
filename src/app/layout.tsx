@@ -9,7 +9,7 @@ config.autoAddCss = false
 export const metadata = {
 	title: "Claim Your XKO | Smartness SAS",
 	description:
-		"Claim your XKO tokens from your Smartness SAS vesting contract.",
+		"Claim your XKO tokens from your vesting contract.",
 }
 
 export default function RootLayout({
@@ -28,7 +28,7 @@ export default function RootLayout({
 						</div>
 
 						<footer className="mt-auto flex justify-center items-center pb-6 flex-col md:flex-row">
-							<button className="h-9 flex justify-center items-center rounded-full">
+							<a href="https://community.shaaa.re" target="_blank" className="h-9 flex justify-center items-center rounded-full">
 								<FontAwesomeIcon
 									icon={faInfoCircle}
 									color={"#008BFF"}
@@ -37,12 +37,12 @@ export default function RootLayout({
 								<p className="text-info text-sm font-semibold">
 									Help
 								</p>
-							</button>
+							</a>
 							<span className="mx-2 hidden md:flex text-grey text-sm">
 								|
 							</span>
 							<p className="text-grey text-sm">
-								{currentYear} Smartness SAS - kopain ©
+							<a href="https://smartness.co" target="_blank">Smartness SAS © {currentYear}</a>
 							</p>
 						</footer>
 					</section>

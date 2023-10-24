@@ -166,9 +166,8 @@ export function Connect({ provider, handleConnected }: Props) {
 
 			<p className="text-dark-grey text-xs w-9/12 md:w-4/12 text-center mt-4 mb-8">
 				Please set your network to Polygon Mainnet.
-				<br></br>
-				Your investment is private for safety reasons, please connect
-				your wallet to access your personal investor dashboard.
+				<br></br><br></br>
+				Your investment is private for safety reasons, please connect your wallet to access your personal investor dashboard.
 			</p>
 		</>
 	)
