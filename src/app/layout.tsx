@@ -28,7 +28,7 @@ export default function RootLayout({
 
 						<footer className="mt-auto flex justify-center items-center pb-6 flex-col md:flex-row">
 							<p className="text-grey text-sm"><a href="https://shaaa.re" target="_blank">Shaaare: Be the King of Brand Content!</a></p>
-							<span className="mx-2 hidden md:flex text-grey text-sm">|</span>
+							<span className="mx-2 hidden md:flex text-grey">—</span>
 							<p className="text-grey text-sm"><a href="https://smartness.co" target="_blank">Smartness SAS © {currentYear}</a></p>
 						</footer>
 					</section>
